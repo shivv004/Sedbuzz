@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,400;1,500&display=swap');
+* {
+    box-sizing: border-box !important;
+}
+
+/* sed button */
+.sedbtn{
+    border: 1px solid #3498db;
+    background: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-family: "Arial";
+    cursor:pointer;  margin:10px;
+    transition: 0.8s all linear;
+    position:relative;
+    overflow: hidden;
+    z-index: 3;
+  }
+  .sedbtn1, .sedbtn3{
+    color: #3498db;
+  }
+  .sedbtn2, .sedbtn4{
+    color: #fff;
+  }
+  .sedbtn1:hover, .sedbtn3:hover{
+    color: #fff;
+  }
+  .sedbtn2:hover, .sedbtn4:hover{
+    color: #3498db;
+  }
+  .sedbtn::before{
+    content: "";
+    position:absolute;
+    left:0;
+    height: 0;
+    width:100%;
+    background:#3498db;
+    z-index: -1;
+    transition: 0.8s all ease-in-out;
+  }
+  .sedbtn1::before, .sedbtn3::before{
+    top: 0;
+    border-radius:  0 0 100% 5% ;
+  }
+  .sedbtn2::before, .sedbtn4::before{
+    bottom: 0;
+    border-radius:  100% 5% 0 0 ;
+  }
+  .sedbtn2::before, .sedbtn4::before{
+    height: 180%;
+  }
+  .sedbtn1:hover::before, .sedbtn3:hover::before{
+    height: 180%;
+  }
+  .sedbtn2:hover::before, .sedbtn4:hover::before{
+    height: 0;
+  }
+/* ----------------- */
+
+p {
+  font-family: 'Raleway', sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+a {
+  font-family: 'Poppins', sans-serif;
+}
+
+hr{
+  position: relative;
+  z-index: 1;
+}
