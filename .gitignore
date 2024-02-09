@@ -1,5 +1,17 @@
 /client/src/components
 
+# testing
+/coverage
+
+# production
+/client/build
+
+# testing
+/client/coverage
+
+# production
+/build
+
 # Logs
 /client/logs
 /client/*.log
