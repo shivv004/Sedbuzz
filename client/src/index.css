@@ -1,17 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600&family=Roboto:wght@400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+    box-sizing: border-box !important;
+}
+@media screen and (min-width: 1024px) and (max-width: 1024px){
+  #left-sec {
+    display: flex;
+    align-items: flex-start;
+    padding-top: 11px;
+    gap: 0.5rem;
+  }
+  #nav-links , #signup, .dropdown{
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+  }
+  nav{
+    top:0;
+  }
+  nav #search{
+    margin-top: -10px;
+    margin-left: 6px;
+  }
+  nav #lg-menu-toggler {
+    display: flex;
+  }
+  nav #side-nav-items:hover{
+    transition: transform .4s cubic-bezier(.215,.61,.355,1),opacity .3s cubic-bezier(.215,.61,.355,1);
+    transform: translate(24px);
+  }
+  nav #more-nav-items:hover, nav #social-nav-items:hover{
+    transition: transform .4s cubic-bezier(.215,.61,.355,1),opacity .3s cubic-bezier(.215,.61,.355,1);
+    transform: translate(14px);
+  }
+  #lg-nav_item_text{
+    color: #000000;
+    transition: var(--trans,color .4s ease 0s);
+  }
+  #lg-nav_item_text:hover{
+      color: #ff5c35;
+      transition: var(--trans,color .4s ease 0s);
+  }
+}
+/* clears the ‘X’ from Internet Explorer */
+input[type=search]::-ms-clear { display: none; width : 0; height: 0; }
+input[type=search]::-ms-reveal { display: none; width : 0; height: 0; }
+/* clears the ‘X’ from Chrome */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration { display: none; }
+nav {
+  z-index: 100;
+}
+img{
+  animation: fadeIn 0.3s;
+}
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+/* sed button */
+  .sedbtn{
+    border: 1px solid #222222;
+    background: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 550;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    cursor:pointer;
+    transition: 0.15s all linear;
+    position:relative;
+    overflow: hidden;
+    z-index: 3;
+    height: 48px;
+  }
+  .sedbtn:hover{
+    border: 1px solid #1d1818;
+    transition: 0.4s all linear;
+  }
+  .sedbtn1, .sedbtn3{
+    color: #000000;
+  }
+  .sedbtn2, .sedbtn4{
+    color: #fff;
+  }
+  .sedbtn1:hover, .sedbtn3:hover{
+    color: #fff;
+  }
+  .sedbtn2:hover, .sedbtn4:hover{
+    color: #000000;
+  }
+  .sedbtn::before{
+    content: "";
+    position:absolute;
+    left:0;
+    height: 0;
+    width:100%;
+    background:#1d1818;
+    z-index: -1;
+    transition: 0.4s all ease-in-out;
+  }
+  .sedbtn1::before, .sedbtn3::before{
+    top: 0;
+  }
+  .sedbtn2::before, .sedbtn4::before{
+    top: 0;
+  }
+  .sedbtn2::before, .sedbtn4::before{
+    height: 180%;
+  }
+  .sedbtn1:hover::before, .sedbtn3:hover::before{
+    height: 180%;
+  }
+  .sedbtn2:hover::before, .sedbtn4:hover::before{
+    height: 0;
+  }
+/* ----------------- */
+
+/* line break */
+.line-break {
+  --type-token-name: utility.assistive-text;
+  line-height: 1.3333333333em;
+  font-size: 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin: 1rem 0;
+}
+.line-break {
+  letter-spacing: normal;
+  font-family: ProximaNova,helvetica,sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-transform: none;
+}
+.line-break span {
+    margin: 0 20px;
+    color: #757575;
+    font-size: 13px;
+}
+.line-break::after, .line-break::before {
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  background-color: #757575;
+  height: 1px;
+  content: "";
+}
+/* ----------------- */
+p {
+  font-family: 'Raleway', sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+h1,h2,h3,h4,h5,h6 {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 550;
 }
+
+a {
+  font-family: 'Poppins', sans-serif;
+}
+
+hr{
+  position: relative;
+}
+input{
+  outline: none;
+}
+#load-more{
+  padding: 0 35px !important;
+  margin: 2rem auto;
+  display: flex;
+  align-items: center;
+}
+
+/* -------------------------- */
+/* Custom scrollbar */
+/* Not supports in Firefox and IE */
+
+/* the scrollbar */
+::-webkit-scrollbar{
+  width: 0.5rem;
+  background-color: #ececec;
+}
+/* the buttons on the scrollbar (arrows pointing upwards and downwards) */
+::-webkit-scrollbar-button{
+  display: none;
+}
+/* the draggable scrolling handle */
+::-webkit-scrollbar-thumb {
+  background-color: #b3b3b3;
+}
+::-webkit-scrollbar-thumb:active {
+  background-color: #989898;
+}
+/* the track (progress bar) of the scrollbar */
+::-webkit-scrollbar-track {
+}
+/* the track (progress bar) NOT covered by the handle */
+::-webkit-scrollbar-track-piece{
+
+}
+/* the bottom corner of the scrollbar, where both horizontal and vertical scrollbars meet */
+::-webkit-scrollbar-corner{
+
+}
+/* the draggable resizing handle that appears at the bottom corner of some elements */
+::-webkit-resizer {
+
+}
+/* -------------------------- */
+
