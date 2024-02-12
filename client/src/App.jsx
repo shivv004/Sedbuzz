@@ -14,8 +14,12 @@ import Portfolio from './components/Portfolio';
 import Search from './components/Search';
 import Signin from './components/Signin';
 import Signup from './components/Signup';
+import Dashboard from './components/Dashboard';
+import { useSelector } from 'react-redux';
+import { DashboardRoute, LoginRoute, SignupRoute } from './components/PrivateRoute';
 
 export default function App() {
+  const {currentUser} = useSelector(state => state.user);
   return (
     <>
     <BrowserRouter>
@@ -31,8 +35,15 @@ export default function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/search" element={<Search />} />
-          <Route path="/login" element={<Signin/>} />
-          <Route path="/signup" element={<Signup/>} />
+          <Route element={<LoginRoute/> }>
+            <Route path="/login" element={<Signin />} />
+          </Route>
+          <Route element={<SignupRoute/> }>
+            <Route path="/signup" element={<Signup />} />
+          </Route>
+          <Route element={<DashboardRoute/> }>
+            <Route path="/dashboard" element={<Dashboard/>} />
+          </Route>
         </Route>
       </Routes>
       <Footer/>
