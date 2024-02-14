@@ -179,7 +179,7 @@ a {
 hr{
   position: relative;
 }
-input{
+input, button{
   outline: none;
 }
 #load-more{
