@@ -15,8 +15,10 @@ import Search from './components/Search';
 import Signin from './components/Signin';
 import Signup from './components/Signup';
 import Dashboard from './components/Dashboard';
+import CreatePost from './components/CreatePost';
 import { useSelector } from 'react-redux';
 import { DashboardRoute, LoginRoute, SignupRoute } from './components/PrivateRoute';
+import { IsAdminCreatePost } from './components/IsAdminPrivateRoute';
 
 export default function App() {
   const {currentUser} = useSelector(state => state.user);
@@ -43,6 +45,9 @@ export default function App() {
           </Route>
           <Route element={<DashboardRoute/> }>
             <Route path="/dashboard" element={<Dashboard/>} />
+          </Route>
+          <Route element={<IsAdminCreatePost/> }>
+            <Route path="/create-post" element={<CreatePost/>} />
           </Route>
         </Route>
       </Routes>
