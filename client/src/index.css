@@ -196,6 +196,7 @@ input, button{
 /* the scrollbar */
 ::-webkit-scrollbar{
   width: 0.5rem;
+  height: 0.5rem;
   background-color: #ececec;
 }
 /* the buttons on the scrollbar (arrows pointing upwards and downwards) */

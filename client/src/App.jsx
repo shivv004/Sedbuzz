@@ -16,6 +16,7 @@ import Signin from './components/Signin';
 import Signup from './components/Signup';
 import Dashboard from './components/Dashboard';
 import CreatePost from './components/CreatePost';
+import PageNotFound from './components/PageNotFound';
 import { useSelector } from 'react-redux';
 import { DashboardRoute, LoginRoute, SignupRoute } from './components/PrivateRoute';
 import { IsAdminCreatePost } from './components/IsAdminPrivateRoute';
@@ -29,6 +30,7 @@ export default function App() {
       <Routes>
         <Route path="/">
           <Route index element={<Main />} />
+          <Route path="*" element={<PageNotFound />}/>
           <Route path="/category/most-recent" element={<MostRecent />} />
           <Route path="/category/trending" element={<Trending />} />
           <Route path="/category/technology" element={<Technology />} />
