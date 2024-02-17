@@ -20,6 +20,7 @@ import PageNotFound from './components/PageNotFound';
 import { useSelector } from 'react-redux';
 import { DashboardRoute, LoginRoute, SignupRoute } from './components/PrivateRoute';
 import { IsAdminCreatePost } from './components/IsAdminPrivateRoute';
+import UpdatePost from './components/UpdatePost';
 
 export default function App() {
   const {currentUser} = useSelector(state => state.user);
@@ -50,6 +51,7 @@ export default function App() {
           </Route>
           <Route element={<IsAdminCreatePost/> }>
             <Route path="/create-post" element={<CreatePost/>} />
+            <Route path="/update-post/:postId" element={<UpdatePost/>} />
           </Route>
         </Route>
       </Routes>
