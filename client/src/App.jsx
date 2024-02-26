@@ -17,13 +17,15 @@ import Signup from './components/Signup';
 import Dashboard from './components/Dashboard';
 import CreatePost from './components/CreatePost';
 import PageNotFound from './components/PageNotFound';
-import { useSelector } from 'react-redux';
 import { DashboardRoute, LoginRoute, SignupRoute } from './components/PrivateRoute';
-import { IsAdminCreatePost } from './components/IsAdminPrivateRoute';
+import { IsAdminPrivateRoute } from './components/IsAdminPrivateRoute';
 import UpdatePost from './components/UpdatePost';
+import PostPage from './components/PostPage';
+import Disclaimers from './components/Disclaimers';
+import PrivacyPolicy from './components/PrivacyPolicy';
+import TermsConditions from './components/TermsConditions';
 
 export default function App() {
-  const {currentUser} = useSelector(state => state.user);
   return (
     <>
     <BrowserRouter>
@@ -49,10 +51,14 @@ export default function App() {
           <Route element={<DashboardRoute/> }>
             <Route path="/dashboard" element={<Dashboard/>} />
           </Route>
-          <Route element={<IsAdminCreatePost/> }>
+          <Route element={<IsAdminPrivateRoute/> }>
             <Route path="/create-post" element={<CreatePost/>} />
             <Route path="/update-post/:postId" element={<UpdatePost/>} />
           </Route>
+          <Route path="/post/:postSlug" element={<PostPage />}/>
+          <Route path="/disclaimers" element={<Disclaimers />}/>
+          <Route path="/privacy-policy" element={<PrivacyPolicy />}/>
+          <Route path="/terms-and-conditions" element={<TermsConditions />}/>
         </Route>
       </Routes>
       <Footer/>
